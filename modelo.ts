@@ -10,6 +10,8 @@ interface Funcionario {
     salarioLiquido: number;
 }
 
+
+
 class Funcionario {
     constructor() {}
     
