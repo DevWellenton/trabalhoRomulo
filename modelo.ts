@@ -9,9 +9,6 @@ interface Funcionario {
     valorDescontoIR: number;
     salarioLiquido: number;
 }
-
-
-
 class Funcionario {
     constructor() {}
     
@@ -25,6 +22,24 @@ class Funcionario {
     }
     setValorTotalHorasExtra(novoValorTotalHorasExtra: number){
         this.dadosFuncionarios.valorTotalHorasExtra = novoValorTotalHorasExtra;
+    }
+    setFaixaDescontoINSS(novoFaixaDescontoINSS: number){
+        this.dadosFuncionarios.faixaDescontoINSS = novoFaixaDescontoINSS;
+    }
+    setValorDescontoINSS(novoValorDescontoINSS: number){
+        this.dadosFuncionarios.valorDescontoINSS = novoValorDescontoINSS;
+    }
+    setHoraExtra(novoHoraExtra: number){
+        this.dadosFuncionarios.horaExtra = novoHoraExtra;
+    }
+    setFaixaDescontoIR(novoFaixaDescontoIR: number){
+        this.dadosFuncionarios.faixaDescontoIR = novoFaixaDescontoIR;
+    }
+    setValorDescontoIR(novoValorDescontoIR: number){
+        this.dadosFuncionarios.valorDescontoIR = novoValorDescontoIR;
+    }
+    setSalarioLiquido(novoSalarioLiquido: number){
+        this.dadosFuncionarios.salarioLiquido = novoSalarioLiquido;
     }
     //
     getNome(): string {
