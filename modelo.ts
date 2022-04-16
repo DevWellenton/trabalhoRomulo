@@ -51,6 +51,25 @@ class Funcionario {
     getValorTotalHorasExtra(): number{
         return this.dadosFuncionarios.valorTotalHorasExtra;
     }
+    getFaixaDescontoINSS(): number{
+        return this.dadosFuncionarios.faixaDescontoINSS;
+    }
+    getValorDescontoINSS(): number{
+        return this.dadosFuncionarios.valorDescontoINSS;
+    }
+    getHoraExtra(): number{
+        return this.dadosFuncionarios.horaExtra;
+    }
+    getFaixaDescontoIR(): number{
+        return this.dadosFuncionarios.faixaDescontoIR;
+    }
+    getValorDescontoIR(): number{
+        return this.dadosFuncionarios.valorDescontoIR;
+    }
+    getSalarioLiquido(): number{
+        return this.dadosFuncionarios.salarioLiquido;
+    }
+
 }
 
 function modelo(nome: string, salarioBruto: number, horasExtras: number) {
