@@ -1,15 +1,15 @@
 
 class Funcionario {
     constructor() { }
-    nome: string = ""
-    salarioBruto: number = 0
-    horasExtras: number = 0
-    valorTotalHorasExtra: number = 0
-    faixaDescontoINSS: number = 0
+    nome: string = "";
+    salarioBruto: number = 0;
+    horasExtras: number = 0;
+    valorTotalHorasExtra: number = 0;
+    faixaDescontoINSS: number = 0;
     valorDescontoINSS: number = 0;
-    faixaDescontoIRRF: number = 0
-    valorDescontoIRRF: number = 0
-    salarioLiquido: number = 0
+    faixaDescontoIRRF: number = 0;
+    valorDescontoIRRF: number = 0;
+    salarioLiquido: number = 0;
 
     calcularHorasExtras() {
         console.log("calculando Horas Extras:");
@@ -44,7 +44,7 @@ class Funcionario {
                 descontados = this.salarioComHoras;
             }
         }
-        this.faixaDescontoINSS = (this.valorDescontoINSS * 100) / this.salarioComHoras
+        this.faixaDescontoINSS = (this.valorDescontoINSS * 100) / this.salarioComHoras;
 
         console.log("valor de desconto de INSS: " + this.valorDescontoINSS);
         console.log("faixa de desconto do INSS: " + this.faixaDescontoINSS);
@@ -80,9 +80,7 @@ class Funcionario {
 }
 
 export function modelo(nome: string, salarioBruto: number, horasExtras: number) {
-    // console.log(nome);
-    // console.log(salarioBruto);
-    // console.log(horasExtras);
+    
     const funcionario = new Funcionario();
     funcionario.nome = nome;
     funcionario.salarioBruto = salarioBruto;
