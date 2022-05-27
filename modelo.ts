@@ -36,11 +36,14 @@ class Funcionario {
         let descontados = 0;
 
         for (const aliquota of aliquotas) {
-            if (this.salarioComHoras > aliquota.limite) {
-                this.valorDescontoINSS += (aliquota.limite - descontados) * aliquota.taxa;
-                descontados = aliquota.limite;
+            let aliquotaLimite = aliquota.limite;
+            let aliquotaTaxa = aliquota.taxa;
+            
+            if (this.salarioComHoras > aliquotaLimite) {
+                this.valorDescontoINSS += (aliquotaLimite - descontados) * aliquotaTaxa;
+                descontados = aliquotaLimite;
             } else {
-                this.valorDescontoINSS += (this.salarioComHoras - descontados) * aliquota.taxa;
+                this.valorDescontoINSS += (this.salarioComHoras - descontados) * aliquotaTaxa;
                 descontados = this.salarioComHoras;
             }
         }
@@ -62,10 +65,12 @@ class Funcionario {
             { limite: Number.MAX_SAFE_INTEGER, taxa: 27.5 / 100, dedutivel: 869.36 }];
 
         for (const aliquota of aliquotas) {
+            let aliquotaTaxa = aliquota.taxa;
+
             if (this.salarioComHoras < aliquota.limite && this.valorDescontoIRRF === 0) {
 
-                this.valorDescontoIRRF += ((this.salarioComHoras - this.valorDescontoINSS) * aliquota.taxa) - aliquota.dedutivel;
-                this.faixaDescontoIRRF = aliquota.taxa * 100;
+                this.valorDescontoIRRF += ((this.salarioComHoras - this.valorDescontoINSS) * aliquotaTaxa) - aliquota.dedutivel;
+                this.faixaDescontoIRRF = aliquotaTaxa * 100;
             }
         }
         console.log("valor de desconto de IRRF: " + this.valorDescontoIRRF);
